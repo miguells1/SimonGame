@@ -40,15 +40,16 @@ $("h1").click(function (event) {
 var userClickedPattern = [];
 
 $(".btn").click(function () {
-    var userChosenColour = $(this).attr("id");
-    userClickedPattern.push(userChosenColour);
-    playSound(userChosenColour);
+    if (level !== 0) {
+       var userChosenColour = $(this).attr("id");
+       userClickedPattern.push(userChosenColour);
+       playSound(userChosenColour);
 
-    animatePress(userChosenColour);
+       animatePress(userChosenColour);
 
 
-    checkAnswer();
-
+       checkAnswer();
+    }
 });
 
 
