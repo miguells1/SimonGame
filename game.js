@@ -3,6 +3,8 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
 var level = 0;
 
+
+
 var gamePattern = [];
 
 function nextSequence() {
@@ -41,14 +43,14 @@ var userClickedPattern = [];
 
 $(".btn").click(function () {
     if (level !== 0) {
-       var userChosenColour = $(this).attr("id");
-       userClickedPattern.push(userChosenColour);
-       playSound(userChosenColour);
+        var userChosenColour = $(this).attr("id");
+        userClickedPattern.push(userChosenColour);
+        playSound(userChosenColour);
 
-       animatePress(userChosenColour);
+        animatePress(userChosenColour);
 
 
-       checkAnswer();
+        checkAnswer();
     }
 });
 
@@ -102,6 +104,7 @@ function gameOver() {
     setTimeout(function () {
         $("body").removeClass("game-over");
     }, 200);
+    setHighScore();
     startOver();
     $("h1").text("Game Over, Click Here to Restart");
 }
@@ -110,4 +113,14 @@ function startOver() {
     level = 0;
     userClickedPattern = [];
     gamePattern = [];
+}
+
+var previousScore = 0;
+
+function setHighScore() {
+    var currentScore = level;
+    if (currentScore >= previousScore) {
+        previousScore = currentScore;
+        $("span").text(currentScore);
+    }
 }

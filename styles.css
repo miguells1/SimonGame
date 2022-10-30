@@ -1,6 +1,9 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.2;
 }
 
 #level-title {
@@ -74,4 +77,21 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+h2{
+  margin-top: 70px;
+}
+
+.how-to-play{
+  margin-top: 70px;
+}
+
+.instructions{
+  text-align: left;
+  margin-left: 30%;
+}
+
+footer{
+  margin: 70px;
 }
